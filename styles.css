@@ -1,0 +1,49 @@
+html {
+    scroll-behavior: smooth;
+}
+
+.hover\:text-blue-500:hover {
+    color: #3b82f6;
+}
+
+.folder {
+    border-radius: 20px 20px 0 0;
+    width: fit-content;
+    background-color: #f0f2f46d;
+}
+
+.folder-content {
+    border-radius: 0px 20px 0 0;
+    width: fit-content;
+    background-color: #f0f2f46d;
+}
+
+.transition {
+    transition: all 0.3s ease;
+}
+
+.btn:hover, .skill-tag:hover {
+    transform: scale(1.09);
+    transition: transform 0.5s ease;
+} 
+
+label {
+    margin-bottom: 5px;
+    display: block;
+    font-weight: bold;
+}
+input, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+}
+input:focus, textarea:focus {
+    border-color: #32598C;
+}
+.hovered-btn:hover {
+    background-color: #32508C;
+    transform: translateY(-2px);
+}

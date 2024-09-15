@@ -1,0 +1,285 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Manrope%3Awght%40400%3B500%3B700%3B800&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"
+    />
+
+    <title>Главная страница</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  </head>
+  <body>
+    <div class="relative flex size-full min-h-screen flex-col bg-white group/design-root overflow-x-hidden" style='font-family: Manrope, "Noto Sans", sans-serif;'>
+      <div class="layout-container flex h-full grow flex-col">
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f0f2f4] px-10 py-3">
+          <div class="flex items-center gap-4 text-[#111418]">
+            <div class="size-4">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M36.727 44c-2.738 0-5.123-4.161-6.363-10.31C29.123 39.839 26.738 44 24 44s-5.123-4.161-6.364-10.31C16.396 39.839 14.011 44 11.273 44 7.256 44 4 35.046 4 24S7.256 4 11.273 4c2.738 0 5.123 4.161 6.363 10.31C18.877 8.161 21.262 4 24 4s5.123 4.161 6.364 10.31C31.604 8.161 33.989 4 36.727 4 40.744 4 44 12.954 44 24s-3.256 20-7.273 20" fill="currentColor"/></svg>
+            </div>
+            <h2 class="text-[#111418] text-lg font-bold leading-tight tracking-[-0.015em]">siadev.ru</h2>
+          </div>
+          <div class="flex flex-1 justify-end gap-8">
+            <div class="flex items-center gap-9">
+              <a class="text-[#111418] text-sm font-medium leading-normal" href="/">Главная</a>
+              <a class="text-[#111418] text-sm font-medium leading-normal" href="#skills">Навыки и опыт</a>
+              <a class="text-[#111418] text-sm font-medium leading-normal" href="#contacts">Контакты</a>
+            </div>
+            <button
+              class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-[#f0f2f4] text-[#111418] text-sm font-bold leading-normal tracking-[0.015em]"
+            >
+              <span class="truncate">Для HR</span>
+            </button>
+          </div>
+        </header>
+        <div class="px-40 flex flex-1 justify-center py-5">
+          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+            <div class="flex p-4 @container">
+              <div class="flex w-full flex-col gap-4 items-center">
+                <div class="flex gap-4 flex-col items-center">
+                  <div
+                    class="bg-center bg-no-repeat aspect-square bg-cover rounded-full min-h-32 w-32"
+                    style='background-image: url("me.png");'
+                  ></div>
+                  <div class="flex flex-col items-center justify-center justify-center">
+                    <p class="text-[#111418] text-[22px] font-bold leading-tight tracking-[-0.015em] text-center">Иван Силаев</p>
+                    <p class="text-[#617389] text-base font-normal leading-normal text-center">Java Разработчик</p>
+                    <p class="text-[#617389] text-base font-normal leading-normal text-center">6+ лет опыта</p>
+                  </div>
+                </div>
+                <div class="flex w-full max-w-[480px] gap-3 @[480px]:w-auto">
+                  <button
+                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-[#f0f2f4] text-[#111418] text-sm font-bold leading-normal tracking-[0.015em] flex-1 @[480px]:flex-auto"
+                  >
+                    <span class="truncate">Для нанимателей</span>
+                  </button>
+                  <button
+                    class="hovered-btn flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-[#5c9df2] text-[#111418] text-sm font-bold leading-normal tracking-[0.015em] flex-1 @[480px]:flex-auto"
+                  >
+                    <span class="truncate"><a href="#contacts">Контакты</a></span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <h2 class="text-[#111418] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Навыки</h2>
+            <div class="flex  gap-3 p-3 flex-wrap pr-4">
+              <div class="btn skill-tag flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-[#f0f2f4] pl-4 pr-4">
+                <p class="text-[#111418] text-sm font-medium leading-normal">Java</p>
+              </div>
+              <div class="btn skill-tag flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-[#f0f2f4] pl-4 pr-4">
+                <p class="text-[#111418] text-sm font-medium leading-normal">Git</p>
+              </div>
+              <div class="btn skill-tag flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-[#f0f2f4] pl-4 pr-4">
+                <p class="text-[#111418] text-sm font-medium leading-normal">Spring Framework</p>
+              </div>
+              <div class="btn skill-tag flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-[#f0f2f4] pl-4 pr-4">
+                <p class="text-[#111418] text-sm font-medium leading-normal">Hibernate</p>
+              </div>
+              <div class="btn skill-tag flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-[#f0f2f4] pl-4 pr-4">
+                <p class="btn skill-tag text-[#111418] text-sm font-medium leading-normal">Microservices</p>
+              </div>
+              <div class="btn skill-tag flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-[#f0f2f4] pl-4 pr-4">
+                <p class="text-[#111418] text-sm font-medium leading-normal">Kubernetes</p>
+              </div>
+              <div class="btn skill-tag flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-[#f0f2f4] pl-4 pr-4">
+                <p class="text-[#111418] text-sm font-medium leading-normal">Docker</p>
+              </div>
+              <div class="btn skill-tag flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-[#f0f2f4] pl-4 pr-4">
+                <p class="text-[#111418] text-sm font-medium leading-normal">Kafka</p>
+              </div>
+              <div class="btn skill-tag flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-[#f0f2f4] pl-4 pr-4">
+                <p class="text-[#111418] text-sm font-medium leading-normal">CI/CD</p>
+              </div>
+              <div class="btn skill-tag flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-[#f0f2f4] pl-4 pr-4">
+                <p class="text-[#111418] text-sm font-medium leading-normal">REST APIs</p>
+              </div>
+              <div class="btn skill-tag flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-[#f0f2f4] pl-4 pr-4">
+                <p class="text-[#111418] text-sm font-medium leading-normal">Unit Testing</p>
+              </div>
+              <div class="btn skill-tag flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-[#f0f2f4] pl-4 pr-4">
+                <p class="text-[#111418] text-sm font-medium leading-normal">Jenkins</p>
+              </div>
+              <div class="btn skill-tag flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-[#f0f2f4] pl-4 pr-4">
+                <p class="text-[#111418] text-sm font-medium leading-normal">Agile/Scrum</p>
+              </div>
+              <div class="btn skill-tag flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-[#f0f2f4] pl-4 pr-4">
+                <p class="text-[#111418] text-sm font-medium leading-normal">SQL</p>
+              </div>
+              <div class="btn skill-tag flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-[#f0f2f4] pl-4 pr-4">
+                <p class="text-[#111418] text-sm font-medium leading-normal">NoSQL</p>
+              </div>
+              <div class="btn skill-tag flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-[#f0f2f4] pl-4 pr-4">
+                <p class="text-[#111418] text-sm font-medium leading-normal">SOLID</p>
+              </div>
+              <div class="btn skill-tag flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-[#f0f2f4] pl-4 pr-4">
+                <p class="text-[#111418] text-sm font-medium leading-normal">Design Patterns</p>
+              </div>
+              <div class="btn skill-tag flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-[#f0f2f4] pl-4 pr-4">
+                <p class="text-[#111418] text-sm font-medium leading-normal">Algorithms</p>
+              </div>
+            </div>
+            <h2 class="text-[#111418] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Опыт работы</h2>
+            <div class="flex items-center gap-4 bg-white px-4 min-h-[72px] py-2 justify-between">
+                <div class="flex items-center gap-4">
+                  <div class="text-[#111418] flex items-center justify-center rounded-lg bg-[#f0f2f4] shrink-0 size-12" data-icon="Briefcase" data-size="24px" data-weight="regular">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                      <path
+                        d="M216,56H176V48a24,24,0,0,0-24-24H104A24,24,0,0,0,80,48v8H40A16,16,0,0,0,24,72V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V72A16,16,0,0,0,216,56ZM96,48a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96ZM216,72v41.61A184,184,0,0,1,128,136a184.07,184.07,0,0,1-88-22.38V72Zm0,128H40V131.64A200.19,200.19,0,0,0,128,152a200.25,200.25,0,0,0,88-20.37V200ZM104,112a8,8,0,0,1,8-8h32a8,8,0,0,1,0,16H112A8,8,0,0,1,104,112Z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div class="flex flex-col justify-center">
+                    <p class="text-[#111418] text-base font-medium leading-normal line-clamp-1">Программист Java</p>
+                    <p class="text-[#617389] text-sm font-normal leading-normal line-clamp-2">Июль 2023 - по настоящее время</p>
+                  </div>
+                </div>
+                <div class="shrink-0"><p class="text-[#111418] text-base font-normal leading-normal">Технаксис</p></div>
+              </div>
+            <div class="flex items-center gap-4 bg-white px-4 min-h-[72px] py-2 justify-between">
+                <div class="flex items-center gap-4">
+                  <div class="text-[#111418] flex items-center justify-center rounded-lg bg-[#f0f2f4] shrink-0 size-12" data-icon="Briefcase" data-size="24px" data-weight="regular">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                      <path
+                        d="M216,56H176V48a24,24,0,0,0-24-24H104A24,24,0,0,0,80,48v8H40A16,16,0,0,0,24,72V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V72A16,16,0,0,0,216,56ZM96,48a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96ZM216,72v41.61A184,184,0,0,1,128,136a184.07,184.07,0,0,1-88-22.38V72Zm0,128H40V131.64A200.19,200.19,0,0,0,128,152a200.25,200.25,0,0,0,88-20.37V200ZM104,112a8,8,0,0,1,8-8h32a8,8,0,0,1,0,16H112A8,8,0,0,1,104,112Z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div class="flex flex-col justify-center">
+                    <p class="text-[#111418] text-base font-medium leading-normal line-clamp-1">Программист Java</p>
+                    <p class="text-[#617389] text-sm font-normal leading-normal line-clamp-2">Май 2022 - Июнь 2023</p>
+                  </div>
+                </div>
+                <div class="shrink-0"><p class="text-[#111418] text-base font-normal leading-normal">Webest</p></div>
+              </div>
+            <div class="flex items-center gap-4 bg-white px-4 min-h-[72px] py-2 justify-between">
+              <div class="flex items-center gap-4">
+                <div class="text-[#111418] flex items-center justify-center rounded-lg bg-[#f0f2f4] shrink-0 size-12" data-icon="Briefcase" data-size="24px" data-weight="regular">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                    <path
+                      d="M216,56H176V48a24,24,0,0,0-24-24H104A24,24,0,0,0,80,48v8H40A16,16,0,0,0,24,72V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V72A16,16,0,0,0,216,56ZM96,48a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96ZM216,72v41.61A184,184,0,0,1,128,136a184.07,184.07,0,0,1-88-22.38V72Zm0,128H40V131.64A200.19,200.19,0,0,0,128,152a200.25,200.25,0,0,0,88-20.37V200ZM104,112a8,8,0,0,1,8-8h32a8,8,0,0,1,0,16H112A8,8,0,0,1,104,112Z"
+                    ></path>
+                  </svg>
+                </div>
+                <div class="flex flex-col justify-center">
+                  <p class="text-[#111418] text-base font-medium leading-normal line-clamp-1">Программист Java</p>
+                  <p class="text-[#617389] text-sm font-normal leading-normal line-clamp-2">Июнь 2018 - Январь 2022</p>
+                </div>
+              </div>
+              <div class="shrink-0"><p class="text-[#111418] text-base font-normal leading-normal">UpWork (freelaner)</p></div>
+            </div>
+            <div class="flex items-center gap-4 bg-white px-4 min-h-[72px] py-2 justify-between">
+              <div class="flex items-center gap-4">
+                <div class="text-[#111418] flex items-center justify-center rounded-lg bg-[#f0f2f4] shrink-0 size-12" data-icon="Briefcase" data-size="24px" data-weight="regular">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                    <path
+                      d="M216,56H176V48a24,24,0,0,0-24-24H104A24,24,0,0,0,80,48v8H40A16,16,0,0,0,24,72V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V72A16,16,0,0,0,216,56ZM96,48a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96ZM216,72v41.61A184,184,0,0,1,128,136a184.07,184.07,0,0,1-88-22.38V72Zm0,128H40V131.64A200.19,200.19,0,0,0,128,152a200.25,200.25,0,0,0,88-20.37V200ZM104,112a8,8,0,0,1,8-8h32a8,8,0,0,1,0,16H112A8,8,0,0,1,104,112Z"
+                    ></path>
+                  </svg>
+                </div>
+                <div class="flex flex-col justify-center">
+                  <p class="text-[#111418] text-base font-medium leading-normal line-clamp-1">Программист Java</p>
+                  <p class="text-[#617389] text-sm font-normal leading-normal line-clamp-2">Май 2017 - Июль 2018</p>
+                </div>
+              </div>
+              <div class="shrink-0"><p class="text-[#111418] text-base font-normal leading-normal">AKCOM.agency</p></div>
+            </div>
+            <h2 class="text-[#111418] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Проекты</h2>
+            <div class="flex items-center gap-4 bg-white px-4 min-h-[72px] py-2 justify-between">
+                <div class="flex items-center gap-4">
+                  <div class="text-[#111418] flex items-center justify-center rounded-lg bg-[#f0f2f4] shrink-0 size-12" data-icon="Briefcase" data-size="24px" data-weight="regular">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                      <path
+                        d="M216,56H176V48a24,24,0,0,0-24-24H104A24,24,0,0,0,80,48v8H40A16,16,0,0,0,24,72V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V72A16,16,0,0,0,216,56ZM96,48a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96ZM216,72v41.61A184,184,0,0,1,128,136a184.07,184.07,0,0,1-88-22.38V72Zm0,128H40V131.64A200.19,200.19,0,0,0,128,152a200.25,200.25,0,0,0,88-20.37V200ZM104,112a8,8,0,0,1,8-8h32a8,8,0,0,1,0,16H112A8,8,0,0,1,104,112Z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div class="flex flex-col justify-center">
+                    <p class="text-[#111418] text-base font-medium leading-normal line-clamp-1">Лизинговый калькулятор, для одной из крупнейших лизинговой компании</p>
+                    <p class="text-[#617389] text-sm font-normal leading-normal line-clamp-2">В одиночку разработал лизинговый калькулятор</p>
+                  </div>
+                </div>
+                <div class="shrink-0"><p class="text-[#111418] text-base font-normal leading-normal">Июль 2023 - по настоящее время</p></div>
+              </div>
+            <div class="flex items-center gap-4 bg-white px-4 min-h-[72px] py-2 justify-between">
+              <div class="flex items-center gap-4">
+                <div class="text-[#111418] flex items-center justify-center rounded-lg bg-[#f0f2f4] shrink-0 size-12" data-icon="Briefcase" data-size="24px" data-weight="regular">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                    <path
+                      d="M216,56H176V48a24,24,0,0,0-24-24H104A24,24,0,0,0,80,48v8H40A16,16,0,0,0,24,72V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V72A16,16,0,0,0,216,56ZM96,48a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96ZM216,72v41.61A184,184,0,0,1,128,136a184.07,184.07,0,0,1-88-22.38V72Zm0,128H40V131.64A200.19,200.19,0,0,0,128,152a200.25,200.25,0,0,0,88-20.37V200ZM104,112a8,8,0,0,1,8-8h32a8,8,0,0,1,0,16H112A8,8,0,0,1,104,112Z"
+                    ></path>
+                  </svg>
+                </div>
+                <div class="flex flex-col justify-center">
+                  <p class="text-[#111418] text-base font-medium leading-normal line-clamp-1">Бэк-енд для мобильной игры</p>
+                  <p class="text-[#617389] text-sm font-normal leading-normal line-clamp-2">Я был частью команды, которая разрабатывала бэк-енд для мобильной игры</p>
+                </div>
+              </div>
+              <div class="shrink-0"><p class="text-[#111418] text-base font-normal leading-normal">Июнь 2023 - Сентябрь 2023</p></div>
+            </div>
+            <div class="flex items-center gap-4 bg-white px-4 min-h-[72px] py-2 justify-between">
+                <div class="flex items-center gap-4">
+                  <div class="text-[#111418] flex items-center justify-center rounded-lg bg-[#f0f2f4] shrink-0 size-12" data-icon="Briefcase" data-size="24px" data-weight="regular">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                      <path
+                        d="M216,56H176V48a24,24,0,0,0-24-24H104A24,24,0,0,0,80,48v8H40A16,16,0,0,0,24,72V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V72A16,16,0,0,0,216,56ZM96,48a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96ZM216,72v41.61A184,184,0,0,1,128,136a184.07,184.07,0,0,1-88-22.38V72Zm0,128H40V131.64A200.19,200.19,0,0,0,128,152a200.25,200.25,0,0,0,88-20.37V200ZM104,112a8,8,0,0,1,8-8h32a8,8,0,0,1,0,16H112A8,8,0,0,1,104,112Z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div class="flex flex-col justify-center">
+                    <p class="text-[#111418] text-base font-medium leading-normal line-clamp-1">Проект в сфере дистрибьюции, для крупного игрока на рынке HoReca</p>
+                    <p class="text-[#617389] text-sm font-normal leading-normal line-clamp-2">Участвовал в разработке серверной части</p>
+                  </div>
+                </div>
+                <div class="shrink-0"><p class="text-[#111418] text-base font-normal leading-normal">Май 2022 - Июнь 2023</p></div>
+              </div>
+              <div class="flex items-center gap-4 bg-white px-4 min-h-[72px] py-2 justify-between">
+                <div class="flex items-center gap-4">
+                  <div class="text-[#111418] flex items-center justify-center rounded-lg bg-[#f0f2f4] shrink-0 size-12" data-icon="Briefcase" data-size="24px" data-weight="regular">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                      <path
+                        d="M216,56H176V48a24,24,0,0,0-24-24H104A24,24,0,0,0,80,48v8H40A16,16,0,0,0,24,72V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V72A16,16,0,0,0,216,56ZM96,48a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96ZM216,72v41.61A184,184,0,0,1,128,136a184.07,184.07,0,0,1-88-22.38V72Zm0,128H40V131.64A200.19,200.19,0,0,0,128,152a200.25,200.25,0,0,0,88-20.37V200ZM104,112a8,8,0,0,1,8-8h32a8,8,0,0,1,0,16H112A8,8,0,0,1,104,112Z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div class="flex flex-col justify-center">
+                    <p class="text-[#111418] text-base font-medium leading-normal line-clamp-1">Фриланс</p>
+                    <p class="text-[#617389] text-sm font-normal leading-normal line-clamp-2">Работал фриланс-разработчиком для международных клиентов</p>
+                  </div>
+                </div>
+                <div class="shrink-0"><p class="text-[#111418] text-base font-normal leading-normal">Май 2017 - Январь 2022</p></div>
+              </div>
+          </div>
+      </div>
+      <footer class="flex justify-center">
+        <div id="contacts" class="flex max-w-[960px] flex-1 flex-col">
+          <h2 class="text-[#111418] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Связаться со мной</h2>
+              <div class="items-center gap-2 bg-white px-4 min-h-[72px] py-2 justify-between">
+                <form>
+                    <input class="w-full p-3 mb-3 border rounded" type="text" placeholder="Ваше имя" name="name" required>
+                    <input class="w-full p-3 mb-3 border rounded" type="text" placeholder="Ваш email" name="email" required>
+                    <textarea class="w-full p-3 mb-3 border rounded" placeholder="Ваше сообщение" name="message" required></textarea>
+                    <button type="submit" class="hovered-btn w-full bg-[#5c9df2] text-[#111418]  font-bold leading-normal rounded">Отправить</button>
+                </form>
+              </div>
+        <footer class="flex flex-col gap-6 px-5 py-10 text-center @container">
+            <div class="flex flex-wrap justify-center gap-4">
+              <a class="text-[#617389] text-base font-normal leading-normal min-w-40 hover:text-blue-500 transition hover:scale-110" href="mailto:me@siadev.ru"><i class="fa-regular fa-envelope"> me@siadev.ru</i></a>
+              <a class="text-[#617389] text-base font-normal leading-normal min-w-40 hover:text-blue-500 transition hover:scale-110" href="https://github.com/suchbaka"> <i class="fa-brands fa-github"> Github</i></a>
+              <a class="text-[#617389] text-base font-normal leading-normal min-w-40 hover:text-blue-500 transition hover:scale-110" href="https://t.me/suchbaka"> <i class="fa-brands fa-telegram"> Telegram</i></a>
+            </div>
+            <p class="text-[#617389] text-base font-normal leading-normal">© 2024 siadev.ru</p>
+          </footer>
+        </div>
+      </footer>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
