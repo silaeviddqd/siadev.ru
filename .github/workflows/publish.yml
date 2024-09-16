@@ -22,7 +22,7 @@ jobs:
           SERVICE_ACCOUNT_KEY: ${{ secrets.YC_SERVICE_ACCOUNT_KEY }}
         run: |
           echo "${SERVICE_ACCOUNT_KEY}" | docker login --username oauth --password-stdin cr.yandex
-          run: echo "COMMIT_HASH=$(echo $GITHUB_SHA | cut -c1-7)" >> $GITHUB_ENV
+          echo "COMMIT_HASH=$(echo $GITHUB_SHA | cut -c1-7)" >> $GITHUB_ENV
       - name: Закидываем образ в YC
         uses: docker/build-push-action@v6
         with:
