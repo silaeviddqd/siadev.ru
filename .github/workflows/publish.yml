@@ -18,18 +18,16 @@ jobs:
       - name: Настройка Docker buildx
         uses: docker/setup-buildx-action@v3
       - name: Авторизация в YC
-        id: vars
         env:
           SERVICE_ACCOUNT_KEY: ${{ secrets.YC_SERVICE_ACCOUNT_KEY }}
         run: |
           echo "${SERVICE_ACCOUNT_KEY}" | docker login --username oauth --password-stdin cr.yandex
-          echo "COMMIT_HASH=$(echo $GITHUB_SHA | cut -c1-7)" >> $GITHUB_ENV
       - name: Закидываем образ в YC
         uses: docker/build-push-action@v6
         with:
           context: .
           push: true
-          tags: cr.yandex/crpsf58ad0hhb5dj9q2f/siadev:v1.0.0-${{ github.run_number }}-${{ env.COMMIT_HASH }}
+          tags: cr.yandex/crpsf58ad0hhb5dj9q2f/siadev:v1.0.0
           build-args:
             SSL_CERT:${{ secrets.SSL_CERT }}
             SSL_KEY:${{ secrets.SSL_KEY }}
@@ -40,11 +38,6 @@ jobs:
     steps:
       - name: Берем код
         uses: actions/checkout@v4
-
-      - name: Extract Git Commit Hash
-        id: vars
-        run: | 
-          echo "COMMIT_HASH=$(echo $GITHUB_SHA | cut -c1-7)" >> $GITHUB_ENV
 
       - name: Деплоим через SSH
         uses: appleboy/ssh-action@v1.0.3
@@ -62,5 +55,5 @@ jobs:
             docker secret rm ssl_cert ssl_key || true
             echo "${{ secrets.SSL_CERT }}" | docker secret create ssl_cert --label cert -
             echo "${{ secrets.SSL_KEY }}" | docker secret create ssl_key --label cert -
-            docker service update --with-registry-auth --image $IMAGE_NAME:v1.0.0-${{ github.run_number }}-${{ env.COMMIT_HASH }} siadev_service || 
-            docker service create --name siadev_service --secret source=ssl_cert,target=/etc/nginx/ssl/siadev.crt --secret source=ssl_key,target=/etc/nginx/ssl/siadev.key --publish 80:80 $IMAGE_NAME:v1.0.0-${{ github.run_number }}-${{ env.COMMIT_HASH }}
+            docker service update --with-registry-auth --image $IMAGE_NAME:v1.0.0 siadev_service || 
+            docker service create --name siadev_service --secret source=ssl_cert,target=/etc/nginx/ssl/siadev.crt --secret source=ssl_key,target=/etc/nginx/ssl/siadev.key --publish 80:80 $IMAGE_NAME:v1.0.0
