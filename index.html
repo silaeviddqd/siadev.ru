@@ -11,7 +11,7 @@
     <title>Главная страница</title>
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
 
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles/styles.css">
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   </head>
@@ -31,11 +31,6 @@
               <a class="text-[#111418] text-sm font-medium leading-normal" href="#skills">Навыки и опыт</a>
               <a class="text-[#111418] text-sm font-medium leading-normal" href="#contacts">Контакты</a>
             </div>
-            <button
-              class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-[#f0f2f4] text-[#111418] text-sm font-bold leading-normal tracking-[0.015em]"
-            >
-              <span class="truncate">Для HR</span>
-            </button>
           </div>
         </header>
         <div class="px-40 flex flex-1 justify-center py-5">
@@ -45,7 +40,7 @@
                 <div class="flex gap-4 flex-col items-center">
                   <div
                     class="bg-center bg-no-repeat aspect-square bg-cover rounded-full min-h-32 w-32"
-                    style='background-image: url("me.png");'
+                    style='background-image: url("/images/me.png");'
                   ></div>
                   <div class="flex flex-col items-center justify-center justify-center">
                     <p class="text-[#111418] text-[22px] font-bold leading-tight tracking-[-0.015em] text-center">Иван Силаев</p>
@@ -57,7 +52,7 @@
                   <button
                     class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-[#f0f2f4] text-[#111418] text-sm font-bold leading-normal tracking-[0.015em] flex-1 @[480px]:flex-auto"
                   >
-                    <span class="truncate">Для нанимателей</span>
+                    <span class="truncate">Скачать CV</span>
                   </button>
                   <button
                     class="hovered-btn flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-[#5c9df2] text-[#111418] text-sm font-bold leading-normal tracking-[0.015em] flex-1 @[480px]:flex-auto"
@@ -68,7 +63,7 @@
               </div>
             </div>
             <h2 class="text-[#111418] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Навыки</h2>
-            <div class="flex  gap-3 p-3 flex-wrap pr-4">
+            <div id="skills" class="flex  gap-3 p-3 flex-wrap pr-4">
               <div class="btn skill-tag flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-[#f0f2f4] pl-4 pr-4">
                 <p class="text-[#111418] text-sm font-medium leading-normal">Java</p>
               </div>
@@ -254,10 +249,78 @@
                 </div>
                 <div class="shrink-0"><p class="text-[#111418] text-base font-normal leading-normal">Май 2017 - Январь 2022</p></div>
               </div>
-          </div>
-      </div>
-      <footer class="flex justify-center">
-        <div id="contacts" class="flex max-w-[960px] flex-1 flex-col">
+              <section class="reviews overflow-hidden">
+			  <h2 class="text-[#111418] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Рекомендации</h2>
+                <div class="reviews-container flex-auto">
+					<div class="review-card size-fit overflow-hidden bg-white rounded-lg shadow-lg flex flex-col">
+                	<div class="flex items-center p-4">
+						<img class="w-16 h-16 rounded-full mr-4" src="/images/ilya.jpg" alt="Фотография">
+						<div>
+							<h3 class="text-lg font-bold">Илья Р.</h3>
+							<p class="text-gray-500">Java-разработчик</p>
+						</div>
+					</div>
+					<div class="px-4 py-2 flex-grow">
+						<p class="text-gray-700">Рекомендую Ивана как отличного Java-разработчика. Мы работали вместе над проектом, и его профессионализм, внимание к деталям и способность решать комплексные задачи поразили меня.  
+						</p>
+					</div>
+					<div class="inset-x-0 bottom-0  px-4 py-2 bg-gray-50">
+						<p class="text-xs text-gray-400 underline">Проект в сфере дистрибьюции, для крупного игрока на рынке HoReca</p>
+					</div>
+				  </div>
+				  <div class="review-card size-fit overflow-hidde bg-white rounded-lg shadow-lg flex flex-col">
+                	<div class="flex items-center p-4">
+						<img class="w-16 h-16 rounded-full mr-4" src="/images/dima.jpg" alt="Фотография">
+						<div>
+							<h3 class="text-lg font-bold">Дмитрий Я.</h3>
+							<p class="text-gray-500">Java-разработчик</p>
+						</div>
+					</div>
+					<div class="px-4 py-2 flex-grow">
+						<p class="text-gray-700">Иван – выдающийся специалист в Java. В нашем совместном проекте он продемонстрировал высокий уровень профессионализма, уверенно справляясь с любыми сложностями.
+						</p>
+					</div>
+					<div class="px-4 py-2 bg-gray-50">
+						<p class="text-xs text-gray-400 underline">Проект в сфере дистрибьюции, для крупного игрока на рынке HoReca</p>
+					</div>
+				  </div>
+				  <div class="review-card size-fit overflow-hidden  bg-white rounded-lg shadow-lg flex flex-col">
+					<div class="flex items-center p-4">
+					  <img class="w-16 h-16 rounded-full mr-4" src="images/denis.jpg" alt="Фотография">
+					  <div>
+						<h3 class="text-lg font-bold">Денис У.</h3>
+						<p class="text-gray-500">QA Team Lead</p>
+					  </div>
+					</div>
+					<div class="px-4 py-2 flex-grow">
+					  <p class="text-gray-700">Иван – отличный Java-разработчик. Его техническая компетенция и умение работать в команде, включая QA, впечатляют. Он способствует эффективному решению задач и поддерживает коллег.</p>
+					</div>
+					<div class="px-4 py-2 bg-gray-50">
+					  <p class="text-xs text-gray-400 underline">Проект в сфере дистрибьюции, для крупного игрока на рынке HoReca</p>
+					</div>
+				  </div>
+                </div>
+
+				<div class="review-card size-fit overflow-hidden  bg-white rounded-lg shadow-lg flex flex-col">
+					<div class="flex items-center p-4">
+					  <img class="w-16 h-16 rounded-full mr-4" src="images/olga.jpg" alt="Фотография">
+					  <div>
+						<h3 class="text-lg font-bold">Ольга Н.</h3>
+						<p class="text-gray-500">HR</p>
+					  </div>
+					</div>
+					<div class="px-4 py-2 flex-grow">
+					  <p class="text-gray-700">Иван проявил себя как высококлассный специалист, и я как HR отмечаю его мастерство, ответственность и коммуникабельность. Он станет ценным сотрудником для вашей компании.</p>
+					</div>
+					<div class="px-4 py-2 bg-gray-50">
+					  <p class="text-xs text-gray-400 underline">Работали в Webest</p>
+					</div>
+				  </div>
+                </div>
+              </section>
+			  </div>
+              <footer class="flex justify-center">
+                <div id="contacts" class="flex max-w-[960px] flex-1 flex-col">
           <h2 class="text-[#111418] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Связаться со мной</h2>
               <div class="items-center gap-2 bg-white px-4 min-h-[72px] py-2 justify-between">
                 <form>
@@ -277,9 +340,8 @@
           </footer>
         </div>
       </footer>
-        </div>
       </div>
     </div>
-    <script src="script.js"></script>
+    <script src="scripts/script.js"></script>
   </body>
 </html>
