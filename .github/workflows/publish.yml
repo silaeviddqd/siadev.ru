@@ -67,4 +67,4 @@ jobs:
             echo "${{ secrets.SSL_CERT }}" | docker secret create ssl_cert --label cert -
             echo "${{ secrets.SSL_KEY }}" | docker secret create ssl_key --label cert -
             docker service update --image $IMAGE_NAME:${{ github.ref_name }} siadev_service || \
-            docker service create --name siadev_service --secret source=ssl_cert,target=/etc/nginx/certs/siadev.crt --secret source=ssl_key,target=/etc/nginx/certs/siadev.key --publish 80:80 $IMAGE_NAME:${{ github.ref_name }}
+            docker service create --name siadev_service --secret source=ssl_cert,target=/etc/nginx/ssl/siadev.crt --secret source=ssl_key,target=/etc/nginx/ssl/siadev.key --publish 80:80 $IMAGE_NAME:${{ github.ref_name }}
