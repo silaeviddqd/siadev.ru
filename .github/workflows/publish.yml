@@ -18,6 +18,7 @@ jobs:
       - name: Настройка Docker buildx
         uses: docker/setup-buildx-action@v3
       - name: Авторизация в YC
+        id: vars
         env:
           SERVICE_ACCOUNT_KEY: ${{ secrets.YC_SERVICE_ACCOUNT_KEY }}
         run: |
@@ -39,6 +40,11 @@ jobs:
     steps:
       - name: Берем код
         uses: actions/checkout@v4
+
+      - name: Extract Git Commit Hash
+        id: vars
+        run: | 
+          echo "COMMIT_HASH=$(echo $GITHUB_SHA | cut -c1-7)" >> $GITHUB_ENV
 
       - name: Деплоим через SSH
         uses: appleboy/ssh-action@v1.0.3
