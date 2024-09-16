@@ -32,8 +32,8 @@ jobs:
             ${{ runner.os }}-buildx-
       - name: Закидываем образ в YC
         uses: docker/build-push-action@v2
-        env: 
-          IMAGE_NAME: cr.yandex/crpsf58ad0hhb5dj9q2f/siadev
+        secrets: | 
+          IMAGE_NAME=cr.yandex/crpsf58ad0hhb5dj9q2f/siadev
         with:
           context: .
           push: true
