@@ -62,6 +62,7 @@ jobs:
           envs: SERVICE_ACCOUNT_KEY, IMAGE_NAME
           script: |
             echo "${SERVICE_ACCOUNT_KEY}" | docker login --username oauth --password-stdin cr.yandex
+            docker rm siadev_service
             docker secret rm ssl_cert ssl_key true
             echo "${{ secrets.SSL_CERT }}" | docker secret create ssl_cert --label cert -
             echo "${{ secrets.SSL_KEY }}" | docker secret create ssl_key --label cert -
