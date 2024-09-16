@@ -29,25 +29,24 @@ jobs:
           docker buildx build --push --tag $IMAGE_NAME:${{ github.ref_name }} .
 
   deploy:
+    needs: bluid-deploy
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Login to Yandex Registry
-        run: |
-          yc container registry configure-docker --token ${{ secrets.YC_SERVICE_ACCOUNT_KEY }} --registry-id crpsf58ad0hhb5dj9q2f
-
       - name: Deploy to VM via SSH
         uses: appleboy/ssh-action@v0.1.4
         env:
+          SERVICE_ACCOUNT_KEY: ${{ secrets.YC_SERVICE_ACCOUNT_KEY }}
           IMAGE_NAME: cr.yandex/crpsf58ad0hhb5dj9q2f/siadev
         with:
           host: ${{ secrets.VM_HOST }}
           username: ${{ secrets.VM_USER }}
           key: ${{ secrets.VM_SSH_KEY }}
           script: |
+            echo "${SERVICE_ACCOUNT_KEY}" | docker login --username oauth --password-stdin cr.yandex
             docker pull cr.yandex/$IMAGE_NAME/your-image-name:latest
             docker stop your-container-name || true
             docker rm your-container-name || true
