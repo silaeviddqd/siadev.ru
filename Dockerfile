@@ -1,5 +1,7 @@
 FROM nginx:latest
 
+RUN mkdir /etc/nginx/certs/
+
 COPY /devops/nginx.conf /etc/nginx/nginx.conf
 COPY . /usr/share/nginx/html
 
