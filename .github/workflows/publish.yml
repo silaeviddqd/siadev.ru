@@ -55,5 +55,5 @@ jobs:
             docker secret rm ssl_cert ssl_key || true
             echo "${{ secrets.SSL_CERT }}" | docker secret create ssl_cert --label cert -
             echo "${{ secrets.SSL_KEY }}" | docker secret create ssl_key --label cert -
-            docker service update --with-registry-auth --image $IMAGE_NAME:v1.0.0 siadev_service || 
+            docker service update --with-registry-auth --force --image $IMAGE_NAME:v1.0.0 siadev_service || 
             docker service create --name siadev_service --secret source=ssl_cert,target=/etc/nginx/ssl/siadev.crt --secret source=ssl_key,target=/etc/nginx/ssl/siadev.key --publish 80:80 $IMAGE_NAME:v1.0.0
