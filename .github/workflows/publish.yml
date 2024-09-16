@@ -41,8 +41,8 @@ jobs:
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache-new
             build-args: |
-            SSL_CERT=${{ secrets.SSL_CERT }}
-            SSL_KEY=${{ secrets.SSL_KEY }}
+              SSL_CERT=${{ secrets.SSL_CERT }}
+              SSL_KEY=${{ secrets.SSL_KEY }}
 
   deploy:
     needs: build-deploy
