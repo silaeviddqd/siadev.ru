@@ -37,7 +37,7 @@ function sendData(captchaToken) {
     getIp().then(userIp => {
         const fs = require('fs');
 
-        const secretPath = '/run/secrets/ysc_server_key';
+        const secretPath = '/run/secrets/ysc_secret';
         const secretKey = fs.readFile(secretPath, 'utf8', (err, data) => {
           if (err) {
             console.error('Ошибка при чтении секрета:', err);
@@ -98,7 +98,7 @@ function onloadFunction() {
         return;
     }
 
-    const secretPath = '/run/secrets/ysc_site_key';
+    const secretPath = '/run/secrets/ysc_site';
     const secretKey = fs.readFile(secretPath, 'utf8', (err, data) => {
       if (err) {
         console.error('Ошибка при чтении секрета:', err);
