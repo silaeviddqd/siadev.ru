@@ -58,4 +58,4 @@ jobs:
             echo "${{ secrets.YSC_SECRET_KEY }}" | docker secret create ysc_secret --label key -
             echo "${{ secrets.YSC_SITE_KEY }}" | docker secret create ysc_site --label key -
             docker service update --with-registry-auth --force --image $IMAGE_NAME:v1.0.0 siadev_service || 
-            docker service create --with-registry-auth --name siadev_service --secret source=ssl_cert,target=/etc/nginx/ssl/siadev.crt --secret source=ssl_key,target=/etc/nginx/ssl/siadev.key --secret source=ysc_secret, target=/run/secrets/ysc_secret --secret source=ysc_key, target=/run/secrets/ysc_key --publish 80:80 --publish 443:443 $IMAGE_NAME:v1.0.0
+            docker service create --with-registry-auth --name siadev_service --secret source=ssl_cert,target=/etc/nginx/ssl/siadev.crt --secret source=ssl_key,target=/etc/nginx/ssl/siadev.key --secret source=ysc_secret,target=/run/secrets/ysc_secret --secret source=ysc_key,target=/run/secrets/ysc_key --publish 80:80 --publish 443:443 $IMAGE_NAME:v1.0.0
