@@ -52,8 +52,10 @@ jobs:
           script: |
             echo "${SERVICE_ACCOUNT_KEY}" | docker login --username oauth --password-stdin cr.yandex
             docker service rm siadev_service
-            docker secret rm ssl_cert ssl_key || true
+            docker secret rm ssl_cert ssl_key ysc_secret_key ysc_site_key || true
             echo "${{ secrets.SSL_CERT }}" | docker secret create ssl_cert --label cert -
             echo "${{ secrets.SSL_KEY }}" | docker secret create ssl_key --label cert -
+            echo "${{ secrets.YSC_SECRET_KEY }}" | docker secret create ysc_secret_key --label key -
+            echo "${{ secrets.YSC_SITE_KEY }}" | docker secret create ysc_site_key --label key -
             docker service update --with-registry-auth --force --image $IMAGE_NAME:v1.0.0 siadev_service || 
-            docker service create --with-registry-auth --name siadev_service --secret source=ssl_cert,target=/etc/nginx/ssl/siadev.crt --secret source=ssl_key,target=/etc/nginx/ssl/siadev.key --publish 80:80 --publish 443:443 $IMAGE_NAME:v1.0.0
+            docker service create --with-registry-auth --name siadev_service --secret source=ssl_cert,target=/etc/nginx/ssl/siadev.crt --secret source=ssl_key,target=/etc/nginx/ssl/siadev.key --secret source=ysc_secret_key, target=/run/secrets/ysc_secret_key --secret source=ysc_site_key, target=/run/secrets/ysc_site_key --publish 80:80 --publish 443:443 $IMAGE_NAME:v1.0.0

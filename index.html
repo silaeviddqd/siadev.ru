@@ -14,6 +14,7 @@
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
 
     <link rel="stylesheet" href="styles/styles.css">
+	<script src="https://smartcaptcha.yandexcloud.net/captcha.js" defer></script>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 	<!-- Yandex.Metrika counter -->
@@ -340,27 +341,43 @@
 			  </div>
               <footer class="flex justify-center">
                 <div id="contacts" class="flex max-w-[960px] flex-1 flex-col">
-          <h2 class="text-[#111418] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Связаться со мной</h2>
-              <div class="items-center gap-2 bg-white px-4 min-h-[72px] py-2 justify-between">
-                <form>
+          		<h2 class="text-[#111418] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Связаться со мной</h2>
+              	<div class="items-center gap-2 bg-white px-4 min-h-[72px] py-2 justify-between">
+				<form id="form">
+					<div id="captcha-container"></div>
+					<input type="hidden" name="smart-token" value=""/>
+				</form>
+					  
+                <form id="feedbackForm">
                     <input class="w-full p-3 mb-3 border rounded" type="text" placeholder="Ваше имя" name="name" required>
                     <input class="w-full p-3 mb-3 border rounded" type="text" placeholder="Ваш email" name="email" required>
                     <textarea class="w-full p-3 mb-3 border rounded" placeholder="Ваше сообщение" name="message" required></textarea>
-                    <button type="submit" class="hovered-btn w-full bg-[#5c9df2] text-[#111418]  font-bold leading-normal rounded">Отправить</button>
+                    <button type="submit" onclick="validateUser()" class="hovered-btn w-full bg-[#5c9df2] text-[#111418]  font-bold leading-normal rounded">Отправить</button>
+					<div id="successAlert" class="hidden bg-green-100 text-green-600 p-4" role="alert">
+						<strong>Успех!</strong> Ваше сообщение отправлено.
+					</div>
+					
+					<div id="errorAlert" class="hidden bg-red-100 text-red-600 p-4" role="alert">
+						<strong>Ошибка!</strong> Что-то сломалось :() Попробуйте другой способ связи;
+					</div>
                 </form>
-              </div>
-        <footer class="flex flex-col gap-6 px-5 py-10 text-center @container">
-            <div class="flex flex-wrap justify-center gap-4">
-              <a class="text-[#617389] text-base font-normal leading-normal min-w-40 hover:text-blue-500 transition hover:scale-110" href="mailto:me@siadev.ru"><i class="fa-regular fa-envelope"> me@siadev.ru</i></a>
-              <a class="text-[#617389] text-base font-normal leading-normal min-w-40 hover:text-blue-500 transition hover:scale-110" href="https://github.com/suchbaka"> <i class="fa-brands fa-github"> Github</i></a>
-              <a class="text-[#617389] text-base font-normal leading-normal min-w-40 hover:text-blue-500 transition hover:scale-110" href="https://t.me/suchbaka"> <i class="fa-brands fa-telegram"> Telegram</i></a>
-            </div>
-            <p class="text-[#617389] text-base font-normal leading-normal">© 2024 siadev.ru</p>
-          </footer>
+              	</div>
+				<footer class="flex flex-col gap-6 px-5 py-10 text-center @container">
+					<div class="flex flex-wrap justify-center gap-4">
+					<a class="text-[#617389] text-base font-normal leading-normal min-w-40 hover:text-blue-500 transition hover:scale-110" href="mailto:me@siadev.ru"><i class="fa-regular fa-envelope"> me@siadev.ru</i></a>
+					<a class="text-[#617389] text-base font-normal leading-normal min-w-40 hover:text-blue-500 transition hover:scale-110" href="https://github.com/suchbaka"> <i class="fa-brands fa-github"> Github</i></a>
+					<a class="text-[#617389] text-base font-normal leading-normal min-w-40 hover:text-blue-500 transition hover:scale-110" href="https://t.me/suchbaka"> <i class="fa-brands fa-telegram"> Telegram</i></a>
+					</div>
+					<p class="text-[#617389] text-base font-normal leading-normal">© 2024 siadev.ru</p>
+				</footer>
         </div>
       </footer>
       </div>
     </div>
+	<script
+  		src="https://smartcaptcha.yandexcloud.net/captcha.js?render=onload&onload=onloadFunction"
+  		defer
+	></script>
     <script src="scripts/script.js"></script>
   </body>
 </html>
