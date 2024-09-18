@@ -1,5 +1,3 @@
-const fs = require('fs');
-
 // Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
@@ -37,6 +35,8 @@ function validateUser() {
 
 function sendData(captchaToken) {
     getIp().then(userIp => {
+        const fs = require('fs');
+
         const secretPath = '/run/secrets/ysc_secret';
         const secretKey = fs.readFile(secretPath, 'utf8', (err, data) => {
           if (err) {
@@ -97,6 +97,8 @@ function onloadFunction() {
     if (!window.smartCaptcha) {
         return;
     }
+
+    const fs = require('fs');
 
     const secretPath = '/run/secrets/ysc_site';
     const secretKey = fs.readFile(secretPath, 'utf8', (err, data) => {
