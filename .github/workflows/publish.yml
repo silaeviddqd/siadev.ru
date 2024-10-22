@@ -57,5 +57,7 @@ jobs:
             echo "${{ secrets.SSL_KEY }}" | docker secret create ssl_key --label cert -
             echo "${{ secrets.YSC_SECRET_KEY }}" | docker secret create ysc_secret --label key -
             echo "${{ secrets.YSC_SITE_KEY }}" | docker secret create ysc_key --label key -
+            echo "${{ secrets.WIKI_SSL }}" | docker secret create wiki_ssl --label cert -
+            echo "${{ secrets.WIKI_KEY }}" | docker secret create wiki_key --label cert -
             docker service update --with-registry-auth --force --image $IMAGE_NAME:v1.0.0 siadev_service || 
-            docker service create --with-registry-auth --name siadev_service --secret source=ssl_cert,target=/etc/nginx/ssl/siadev.crt --secret source=ssl_key,target=/etc/nginx/ssl/siadev.key --secret source=ysc_secret,target=/run/secrets/ysc_secret --secret source=ysc_key,target=/run/secrets/ysc_key --publish 80:80 --publish 443:443 $IMAGE_NAME:v1.0.0
+            docker service create --with-registry-auth --name siadev_service --secret source=ssl_cert,target=/etc/nginx/ssl/siadev.crt --secret source=ssl_key,target=/etc/nginx/ssl/siadev.key --secret source=ysc_secret,target=/run/secrets/ysc_secret --secret source=ysc_key,target=/run/secrets/ysc_key --secret source=wiki_ssl,target=/etc/nginx/ssl/wiki_fullchain.crt --secret source=wiki_key,target=/etc/nginx/ssl/wiki_privkey.key --publish 80:80 --publish 443:443 $IMAGE_NAME:v1.0.0
